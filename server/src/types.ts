@@ -1,0 +1,16 @@
+export enum CommunityStatus {
+  ACTIVE = 'ACTIVE',
+  COLLAPSED = 'COLLAPSED',
+  PENDING = 'PENDING'
+}
+
+export enum InvestmentAnalyticsFilter {
+  TODAY = 'TODAY',
+  YESTERDAY = 'YESTERDAY',
+  THIS_WEEK = 'THIS_WEEK',
+  LAST_WEEK = 'LAST_WEEK',
+  THIS_MONTH = 'THIS_MONTH',
+  LAST_MONTH = 'LAST_MONTH',
+  THIS_YEAR = 'THIS_YEAR',
+  CUSTOM_RANGE = 'CUSTOM_RANGE'
+}

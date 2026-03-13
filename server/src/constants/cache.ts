@@ -1,0 +1,1 @@
+export const LAST_PROCESSED_BLOCK = 'last-processed-block'
