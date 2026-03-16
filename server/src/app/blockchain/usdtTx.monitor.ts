@@ -57,7 +57,7 @@ export class MonitorUsdtTx implements OnModuleInit, OnModuleDestroy {
   async onModuleInit() {
     this.logger.log('Blockchain monitor initialized.');
     try {
-      // await this.startMonitoring();
+      await this.startMonitoring();
     } catch (error) {
       this.logger.error('Failed to initialize blockchain monitor:', error);
       // Retry initialization after delay
@@ -123,6 +123,7 @@ export class MonitorUsdtTx implements OnModuleInit, OnModuleDestroy {
     }
   }
 
+  
   startEventListener() {
     this.logger.log('👂 Starting real-time block listener...');
     const contract = new ethers.Contract(
@@ -157,8 +158,8 @@ export class MonitorUsdtTx implements OnModuleInit, OnModuleDestroy {
       await this.txFilteringQueue.add(
         'filter-tx',
         {
-          from: tx.fromAddress,
-          to: tx.toAddress,
+          fromAddress: tx.fromAddress,
+          toAddress: tx.toAddress,
           value: tx.value,
           blockNumber: tx.blockNumber,
           blockHash: tx.blockHash,
@@ -167,7 +168,7 @@ export class MonitorUsdtTx implements OnModuleInit, OnModuleDestroy {
           transactionIndex: tx.transactionIndex,
         },
         {
-          jobId: `block|${tx.blockNumber}`,
+          jobId: `block|${tx.blockNumber}|${tx.transactionHash}`,
           attempts: 3,
           backoff: { type: 'exponential', delay: 2000 },
           removeOnComplete: true,

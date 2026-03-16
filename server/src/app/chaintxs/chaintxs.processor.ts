@@ -15,6 +15,7 @@ export class ChainTxsProcessor extends WorkerHost {
     super();
   }
   async process(job: Job<Tx>) {
+    console.log("new Transaction Found !!")
     const res = await this.chainTxsService.processTx(job.data);
   }
 }

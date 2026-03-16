@@ -20,12 +20,12 @@ import { CacheModule } from '@nestjs/cache-manager';
 
 @Module({
   imports: [
-    TypeOrmModule.forRootAsync({
-      useFactory: typeOrmConfig,
-    }),
     ConfigModule.forRoot({
       envFilePath: '.env.local',
       isGlobal: true,
+    }),
+    TypeOrmModule.forRootAsync({
+      useFactory: typeOrmConfig,
     }),
     JwtModule.registerAsync({
       useFactory: () => ({

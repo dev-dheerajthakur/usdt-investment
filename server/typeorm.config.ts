@@ -15,3 +15,18 @@ export const typeOrmConfig = (): TypeOrmModuleOptions => ({
   migrations: ['dist/migrations/*.js'],
   // entities: [Users]
 });
+
+// import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+// export const typeOrmConfig = (): TypeOrmModuleOptions => {
+//   return {
+//     type: 'postgres',
+//     host: 'db.myvjzmwnwwunbzwzwdso.supabase.co',
+//     port: 5432,
+//     username: 'postgres',
+//     password: '#Ggnfy57h123456',
+//     database: 'postgres',
+//     synchronize: true,
+//     ssl: { rejectUnauthorized: false },
+//     autoLoadEntities: true,
+//   };
+// };
