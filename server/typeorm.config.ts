@@ -28,5 +28,8 @@ export const typeOrmConfig = (): TypeOrmModuleOptions => {
     synchronize: true,
     ssl: { rejectUnauthorized: false },
     autoLoadEntities: true,
+    extra: {
+      family: 4,  // 👈 force IPv4, fixes ENETUNREACH on Render
+    },
   };
 };
