@@ -16,7 +16,7 @@
 //   // entities: [Users]
 // });
 
-import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+// import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 // export const typeOrmConfig = (): TypeOrmModuleOptions => {
 //   return {
 //     type: 'postgres',
@@ -33,16 +33,17 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 //     },
 //   };
 // };
+import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 export const typeOrmConfig = (): TypeOrmModuleOptions => {
   return {
     type: 'postgres',
-    url: 'postgresql://postgres:#Ggnfy57h123456@db.myvjzmwnwwunbzwzwdso.supabase.co:5432/postgres',
+    url: "postgresql://usdt_investment_user:XKOuRiMcHWfstFbh3SvJMVol8PRIFhf3@dpg-d6roql0gjchc73be06hg-a/usdt_investment",  // 👈 from Render environment
     synchronize: true,
-    ssl: { rejectUnauthorized: false },
+    ssl: false,          // internal connection, no SSL needed
     autoLoadEntities: true,
     extra: {
-      family: 4,
+      family: 4,         // force IPv4
     },
   };
 };
