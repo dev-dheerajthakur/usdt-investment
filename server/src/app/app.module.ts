@@ -35,7 +35,7 @@ import { CacheModule } from '@nestjs/cache-manager';
 
     BullModule.forRoot({
       connection: {
-        host: 'localhost',
+        host: 'redis://red-d6rnovvdiees73btv9bg',
         port: 6379,
       },
     }),   
