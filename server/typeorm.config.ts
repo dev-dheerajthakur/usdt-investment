@@ -16,20 +16,36 @@
 //   // entities: [Users]
 // });
 
+// import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+// export const typeOrmConfig = (): TypeOrmModuleOptions => {
+//   return {
+//     type: 'postgres',
+//     host: 'db.myvjzmwnwwunbzwzwdso.supabase.co',
+//     port: 5432,
+//     username: 'postgres',
+//     password: '#Ggnfy57h123456',
+//     database: 'postgres',
+//     synchronize: true,
+//     ssl: { rejectUnauthorized: false },
+//     autoLoadEntities: true,
+//     extra: {
+//       family: 4,  // 👈 force IPv4, fixes ENETUNREACH on Render
+//     },
+//   };
+// };
+
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+
 export const typeOrmConfig = (): TypeOrmModuleOptions => {
   return {
     type: 'postgres',
-    host: 'db.myvjzmwnwwunbzwzwdso.supabase.co',
-    port: 5432,
-    username: 'postgres',
-    password: '#Ggnfy57h123456',
-    database: 'postgres',
+    url: 'postgresql://postgres:#Ggnfy57h123456@db.myvjzmwnwwunbzwzwdso.supabase.co:5432/postgres',
     synchronize: true,
     ssl: { rejectUnauthorized: false },
     autoLoadEntities: true,
     extra: {
-      family: 4,  // 👈 force IPv4, fixes ENETUNREACH on Render
+      family: 4,  // force IPv4
     },
   };
 };
+```
