@@ -57,7 +57,7 @@ export class MonitorUsdtTx implements OnModuleInit, OnModuleDestroy {
   async onModuleInit() {
     this.logger.log('Blockchain monitor initialized.');
     try {
-      await this.startMonitoring();
+      // await this.startMonitoring();
     } catch (error) {
       this.logger.error('Failed to initialize blockchain monitor:', error);
       // Retry initialization after delay
