@@ -2,7 +2,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  PrimaryColumn,
+  PrimaryColumn,PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
@@ -14,7 +14,10 @@ export enum BlockStatus {
 
 @Entity('blockstate')
 export class BlockState {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn('increment')
+  id: number;
+  
+  @Column()
   blockNumber: number;
   
   @Column({ type: 'enum', enum: BlockStatus })
