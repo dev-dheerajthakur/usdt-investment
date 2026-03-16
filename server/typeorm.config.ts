@@ -34,8 +34,6 @@
 //   };
 // };
 
-import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-
 export const typeOrmConfig = (): TypeOrmModuleOptions => {
   return {
     type: 'postgres',
@@ -44,7 +42,7 @@ export const typeOrmConfig = (): TypeOrmModuleOptions => {
     ssl: { rejectUnauthorized: false },
     autoLoadEntities: true,
     extra: {
-      family: 4,  // force IPv4
+      family: 4,
     },
   };
 };
