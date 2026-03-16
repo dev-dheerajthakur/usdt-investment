@@ -16,7 +16,7 @@
 //   // entities: [Users]
 // });
 
-// import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 // export const typeOrmConfig = (): TypeOrmModuleOptions => {
 //   return {
 //     type: 'postgres',
